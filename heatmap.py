@@ -9,8 +9,13 @@ import datasetAnalysis
 
 dataFrame = datasetAnalysis.df
 
-dataFrameDensity = dataFrame['FIRE_SIZE']
-dataFrameDensity = dataFrameDensity.pow(2)
+# dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'A'].index)
+# dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'B'].index)
+# dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'C'].index)
+# dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'D'].index)
+dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'E'].index)
+dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'F'].index)
+dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] != 'G'].index)
 
 
 #Heat Map
