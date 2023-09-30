@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly_express as px
 
-import fileOpenerSHORTER
+import fileOpenerHeatMap
 
-dataFrame = fileOpenerSHORTER.df
+dataFrame = fileOpenerHeatMap.df
 
-print(dataFrame)
+
