@@ -12,7 +12,27 @@ dataFrame = datasetAnalysis.df
 dataFrameDensity = dataFrame['FIRE_SIZE']
 dataFrameDensity = dataFrameDensity.pow(2)
 
-fig = px.density_mapbox(dataFrame, lat = 'LATITUDE', lon = "LONGITUDE", z = 'FIRE_SIZE', center = dict(lat=dataFrame.LATITUDE.mean(),lon=dataFrame.LONGITUDE.mean()),zoom=4,mapbox_style="carto-positron",height=900)
+
+#Heat Map
+fig = px.density_mapbox(dataFrame, 
+                        lat = 'LATITUDE', 
+                        lon = "LONGITUDE", 
+                        z = 'FIRE_SIZE', 
+                        radius=50,
+                        opacity=0.75,
+                        color_continuous_scale='Jet',
+                        center = dict(lat=dataFrame.LATITUDE.mean(),lon=dataFrame.LONGITUDE.mean()),
+                        zoom=4,
+                        mapbox_style="stamen-toner",
+                        height=900)
+# Scatter Map Box
+
+fig2 = px.scatter_mapbox(dataFrame.sample(n=5000),
+                        lat = 'LATITUDE', 
+                        lon = "LONGITUDE", 
+                        zoom = 5)
+
+
 fig.show()
 
 
