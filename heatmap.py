@@ -18,20 +18,13 @@ fig = px.density_mapbox(dataFrame,
                         lat = 'LATITUDE', 
                         lon = "LONGITUDE", 
                         z = 'FIRE_SIZE', 
-                        radius=50,
+                        radius=30,
                         opacity=0.75,
                         color_continuous_scale='Jet',
                         center = dict(lat=dataFrame.LATITUDE.mean(),lon=dataFrame.LONGITUDE.mean()),
-                        zoom=4,
+                        zoom=3,
                         mapbox_style="stamen-toner",
                         height=900)
-# Scatter Map Box
-
-fig2 = px.scatter_mapbox(dataFrame.sample(n=5000),
-                        lat = 'LATITUDE', 
-                        lon = "LONGITUDE", 
-                        zoom = 5)
-
 
 fig.show()
 
