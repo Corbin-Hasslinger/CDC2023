@@ -7,5 +7,5 @@ mf = pd.read_excel(io=main_file_name, sheet_name=main_sheet, usecols="Y, AC, AD,
 with open('dataset.pkl', 'wb') as file:
     joblib.dump(mf, file)
 # cf = pd.read_excel(io = cities_file_name, sheet_name=cities_file_name, usecols="A, ")
-print(mf.head(5))
+
 
