@@ -1,6 +1,7 @@
 import pandas as pd
 
-file_name = "NautralSciences_Dataset.xlsx"
-sheet = "Fires"
-df = pd.read_excel(io=file_name, sheet_name=sheet)
+main_file_name, cities_file_name = "NautralSciences_Dataset.xlsx", "uscities.xlsx"
+main_sheet, cities_sheet = "Fires", "Sheet1"
+df = pd.read_excel(io=main_file_name, sheet_name=main_sheet, usecols="Y, AD, AE, AF")
 print(df.head(5))
+
