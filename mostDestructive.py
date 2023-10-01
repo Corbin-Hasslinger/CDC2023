@@ -35,7 +35,7 @@ def total_damage_count():
 
     sns.set_theme(style="whitegrid")
     plt.figure(figsize=(10, 6))
-    sns.barplot(x="Damage", y="Classes", data=data, palette="Blues_d")
+    sns.barplot(x="Classes", y="Damage", data=data, palette="Blues_d",orient='v')
     plt.xlabel('Total Damage Acreage', fontsize=12)
     plt.ylabel('Classes', fontsize=12)
     plt.title('Most Damaging Classes of Fire', fontsize=14)
