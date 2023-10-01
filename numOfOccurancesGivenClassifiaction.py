@@ -95,17 +95,13 @@ for key in elements:
     x.append(key)
     y.append(elements[key])
 
-<<<<<<< HEAD
-plt.scatter(x, y)
-=======
 data = pd.DataFrame({'Classes': y, 'Damage': x})
 
 sns.set_theme(style="whitegrid")
 plt.figure(figsize=(10, 6))
-sns.barplot(x="Damage", y="Classes", data=data, palette="Blues_d")
+sns.barplot(x="Damage", y="Classes", data=data, color='b')
 plt.xlabel('Total Damage Acreage', fontsize=12)
 plt.ylabel('Classes', fontsize=12)
 plt.title('Most Damaging Classes of Fire', fontsize=14)
 
->>>>>>> e1271b2320df00e8ac52912e54155c5f4ad918b8
 plt.show()
