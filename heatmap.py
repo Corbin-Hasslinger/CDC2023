@@ -3,19 +3,22 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly_express as px
+import joblib
 
-import datasetAnalysis
+
+with open('dataset.pkl', 'rb') as file:
+    df = joblib.load(file)
 
 
-dataFrame = datasetAnalysis.df
+dataFrame = df
 
-# dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'A'].index)
-# dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'B'].index)
-# dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'C'].index)
-# dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'D'].index)
-dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'E'].index)
-dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'F'].index)
-dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] != 'G'].index)
+dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'A'].index)
+dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'B'].index)
+dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'C'].index)
+dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'D'].index)
+# dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'E'].index)
+# dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'F'].index)
+# dataFrame = dataFrame.drop(dataFrame[dataFrame['FIRE_SIZE_CLASS'] == 'G'].index)
 
 
 #Heat Map
