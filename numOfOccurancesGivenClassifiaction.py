@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
-import seaborn
+import seaborn as sns
 import joblib
 
 with open('dataset.pkl', 'rb') as file:
@@ -11,6 +11,7 @@ print(type(df))
 causeCol = df["STAT_CAUSE_DESCR"]
 severityCol = df ["FIRE_SIZE_CLASS"]
 doyCol = df["DISCOVERY_DOY"]
+state = df["STATE"]
 
 
 def severityBreakdown(let, data):
@@ -87,7 +88,8 @@ def count_elements(lst):
     return element_count
 
 
-elements = count_elements(severityBreakdown('G', doyCol))
+elements = count_elements(severityBreakdown('G', state))
+
 x = []
 y = []
 
@@ -95,7 +97,13 @@ for key in elements:
     x.append(key)
     y.append(elements[key])
 
-print(x)
-print(y)
-plt.scatter(x, y)
+data = pd.DataFrame({'Classes': y, 'Damage': x})
+
+sns.set_theme(style="whitegrid")
+plt.figure(figsize=(10, 6))
+sns.barplot(x="Damage", y="Classes", data=data, palette="Blues_d")
+plt.xlabel('Total Damage Acreage', fontsize=12)
+plt.ylabel('Classes', fontsize=12)
+plt.title('Most Damaging Classes of Fire', fontsize=14)
+
 plt.show()
