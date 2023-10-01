@@ -6,7 +6,6 @@ import joblib
 
 with open('dataset.pkl', 'rb') as file:
     df = joblib.load(file)
-print(type(df))
 
 causeCol = df["STAT_CAUSE_DESCR"]
 severityCol = df ["FIRE_SIZE_CLASS"]
@@ -70,7 +69,6 @@ def severityBreakdown(let, data):
 
 def mostCommonVal(column):
     counts = column.value_counts()
-    print(counts)
     return(counts)
 
 def count_elements(lst):
@@ -95,7 +93,5 @@ for key in elements:
     x.append(key)
     y.append(elements[key])
 
-print(x)
-print(y)
 plt.scatter(x, y)
 plt.show()

@@ -65,11 +65,10 @@ def g_state_counts():
     g_data = pd.DataFrame({'State': state_names, 'G_Count': g_counts})
 
     sns.barplot(x='G_Count', y='State', data=g_data, palette='Blues_d')
-    
+
     plt.xlabel('G-Count', fontsize=12)
     plt.ylabel('States', fontsize=12)
-    plt.title('Top 10 States by Fire Class Count', fontsize=14)
-    plt.legend(title='Fire Class')
+    plt.title('Top 10 States by G Fire Class Count', fontsize=14)
 
     plt.show()
 
