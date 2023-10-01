@@ -40,7 +40,10 @@ def total_damage_count():
     plt.xlabel('Total Damage Acreage', fontsize=12)
     plt.ylabel('Classes', fontsize=12)
     plt.title('Most Damaging Classes of Fire', fontsize=14)
-
+    
+    sns.set_style("dark")
     plt.show()
+
+
 
 total_damage_count()
