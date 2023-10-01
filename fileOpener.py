@@ -6,4 +6,4 @@ main_sheet = "Fires"
 mf = pd.read_excel(io=main_file_name, sheet_name=main_sheet, usecols="U, T, V, Y, AC, AD, AE, AF")
 with open('dataset.pkl', 'wb') as file:
     joblib.dump(mf, file)
-
+print("hello")
