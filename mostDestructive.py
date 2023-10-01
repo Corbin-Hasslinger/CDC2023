@@ -14,19 +14,11 @@ for i in range(len(df['FIRE_SIZE'])):
     fire_size = df.at[i, 'FIRE_SIZE']
     fire_class = df.at[i, 'FIRE_SIZE_CLASS']
     
-    # Add the fire size to the total for the corresponding class
     total_fire_sizes[fire_class] += fire_size
 
 myKeys = list(total_fire_sizes.keys())
 myKeys.sort()
 sorted_dict = {i: total_fire_sizes[i] for i in myKeys}
-
-for fire_class, total_size in total_fire_sizes.items():
-    print(f"Total Fire Size for Class {fire_class}: {total_size} acres")
-
-print(total_fire_sizes)
-print(total_fire_sizes.values)
-print(total_fire_sizes.keys)
 
 def total_damage_count():
     x  = [int(x) for x in list(sorted_dict.values())]
