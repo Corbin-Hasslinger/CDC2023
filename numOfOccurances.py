@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
-
+import seaborn as sns
 import joblib
 
 with open('dataset.pkl', 'rb') as file:
@@ -39,5 +39,10 @@ for key in elements:
     x.append(key)
     y.append(elements[key])
 
-plt.scatter(x, y)
+
+df = pd.DataFrame({"Category": x, "Count": y})
+
+sns.barplot(df,x='Category',y='Count',color="mediumpurple")
+
+
 plt.show()
