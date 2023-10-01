@@ -29,13 +29,13 @@ print(total_fire_sizes.values)
 print(total_fire_sizes.keys)
 
 def total_damage_count():
-    x = list(sorted_dict.values())
+    x  = [int(x) for x in list(sorted_dict.values())]
     y = list(sorted_dict.keys())
     data = pd.DataFrame({'Classes': y, 'Damage': x})
 
     sns.set_theme(style="whitegrid")
     plt.figure(figsize=(10, 6))
-    sns.barplot(x="Damage", y="Classes", data=data, palette="Blues_d")
+    sns.barplot(x="Classes", y="Damage", data=data, palette="Blues_d", orient='x')
     plt.xlabel('Total Damage Acreage', fontsize=12)
     plt.ylabel('Classes', fontsize=12)
     plt.title('Most Damaging Classes of Fire', fontsize=14)
