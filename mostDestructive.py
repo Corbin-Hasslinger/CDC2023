@@ -16,7 +16,6 @@ for i in range(len(df['FIRE_SIZE'])):
     
     # Add the fire size to the total for the corresponding class
     total_fire_sizes[fire_class] += fire_size
-# Display the total fire sizes for each class
 
 myKeys = list(total_fire_sizes.keys())
 myKeys.sort()
